@@ -1,0 +1,25 @@
+puts "Enter a list of number:"
+set a [gets stdin]
+set sum 0
+
+#for calculating sum,average & square root
+
+for {set i 0} {$i < [llength $a]} {incr i} {
+       set sum [expr $sum+[lindex $a $i]]
+       set avg [expr $sum / [llength $a]]
+       set sq [expr sqrt ([lindex $a $i])]                   
+}
+
+#for calculating standard deviation
+set sum1 0
+for {set j 0} {$j < [llength $a]} {incr j} {
+        set c [expr [lindex $a $i]- $avg]
+        set d [expr {pow($c,2)} + $sum1]
+        set e [expr $d / [llength $a]]
+        set f [expr {sqrt ($e)}]
+}
+
+puts "The summation is: $sum"
+puts "The average is: $avg"
+puts "The square root of the values are: $sq"
+puts "The standard deviation is: $f"
